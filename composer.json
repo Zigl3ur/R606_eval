@@ -1,0 +1,17 @@
+{
+    "name": "eden/r606_eval",
+    "autoload": {
+        "psr-4": {
+            "Eden\\R606Eval\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zigleur",
+            "email": "eden.douru@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    }
+}
