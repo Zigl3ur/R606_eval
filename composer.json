@@ -3,6 +3,9 @@
     "autoload": {
         "psr-4": {
             "Eden\\R606Eval\\": "src/"
+        },
+        "psr-0": {
+            "": "src/"
         }
     },
     "authors": [
@@ -13,5 +16,11 @@
     ],
     "require-dev": {
         "phpstan/phpstan": "^2.1"
+    },
+    "require": {
+        "doctrine/orm": "^3.6",
+        "doctrine/dbal": "^4",
+        "symfony/cache": "^7",
+        "symfony/var-exporter": "^7.0"
     }
 }
