@@ -14,3 +14,11 @@ Appliquer les migrations :
 ```bash
 php bin/doctrine migrations:migrate
 ```
+
+Lancer les tests :
+```bash
+php bin/phpunit
+```
+
+### Notes
+- Je n'ai pas eu le temps de run les tests dans la CI
