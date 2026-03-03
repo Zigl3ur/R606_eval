@@ -1,0 +1,27 @@
+{
+    "name": "eden/r606_eval",
+    "autoload": {
+        "psr-4": {
+            "Eden\\R606Eval\\": "src/",
+            "Eden\\R606Eval\\Migrations\\": "lib/Migrations/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zigleur",
+            "email": "eden.douru@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "doctrine/data-fixtures": "^2.2",
+        "phpunit/phpunit": "^13"
+    },
+    "require": {
+        "doctrine/orm": "^3.6",
+        "doctrine/dbal": "^4",
+        "symfony/cache": "^7",
+        "symfony/var-exporter": "^7.0",
+        "doctrine/migrations": "^3.9"
+    }
+}

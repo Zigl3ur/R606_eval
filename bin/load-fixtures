@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
+use Doctrine\Common\DataFixtures\Loader;
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
+use Eden\R606Eval\DataFixtures\DbTableFixture;
+
+require __DIR__ . '/../bootstrap.php';
+
+$loader = new Loader();
+$loader->addFixture(new DbTableFixture());
+
+$purger   = new ORMPurger($entityManager);
+$executor = new ORMExecutor($entityManager, $purger);
+$executor->execute($loader->getFixtures());
+
+echo "Fixtures loaded successfully.\n";
