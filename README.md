@@ -9,3 +9,8 @@ Lancer le projet avec docker-compose :
 ```bash
 docker compose --env-file .env.development -f docker-compose.dev.yml up --build
 ```
+
+Appliquer les migrations :
+```bash
+php bin/doctrine migrations:migrate
+```

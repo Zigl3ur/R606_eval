@@ -5,19 +5,10 @@ use Eden\R606Eval\Entity\DbTable;
 require_once __DIR__ . '/bootstrap.php';
 
 $tables = [];
-$exData = ["azerty", "qabcdefh", "xyz", "123456789"];
 
 try {
-    $repo = $entityManager->getRepository(DbTable::class);
+    $repo   = $entityManager->getRepository(DbTable::class);
     $tables = $repo->findAll();
-    if (empty($tables)) {
-        foreach ($exData as $text) {
-            $table = new DbTable();
-            $table->setText($text);
-            $entityManager->persist($table);
-        }
-        $entityManager->flush();
-    }
 } catch (Exception $e) {
     $tables = [];
 }
