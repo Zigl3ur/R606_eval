@@ -26,12 +26,28 @@ if (PHP_VERSION_ID >= 80400) {
     $config->setAutoGenerateProxyClasses(true);
 }
 
+$dbHost     = $_ENV['DB_HOST'] ?? getenv('DB_HOST') ?: '127.0.0.1';
+$dbName     = $_ENV['DB_NAME'] ?? getenv('DB_NAME') ?: 'maint_app';
+$dbUser     = $_ENV['DB_USER'] ?? getenv('DB_USER') ?: 'root';
+$dbPassword = $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD') ?: 'root';
+
+$tmpConnection = DriverManager::getConnection([
+    'driver'   => 'pdo_mysql',
+    'host'     => $dbHost,
+    'user'     => $dbUser,
+    'password' => $dbPassword,
+], $config);
+$tmpConnection->executeStatement(
+    'CREATE DATABASE IF NOT EXISTS `' . $dbName . '` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci'
+);
+$tmpConnection->close();
+
 $connection = DriverManager::getConnection([
-    'driver' => 'pdo_mysql',
-    'host' => "localhost",
-    'dbname' => "maint_app",
-    'user' => "root",
-    'password' => "root",
+    'driver'   => 'pdo_mysql',
+    'host'     => $dbHost,
+    'dbname'   => $dbName,
+    'user'     => $dbUser,
+    'password' => $dbPassword,
 ], $config);
 
 $entityManager = new EntityManager($connection, $config);

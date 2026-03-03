@@ -2,10 +2,8 @@
     "name": "eden/r606_eval",
     "autoload": {
         "psr-4": {
-            "Eden\\R606Eval\\": "src/"
-        },
-        "psr-0": {
-            "": "src/"
+            "Eden\\R606Eval\\": "src/",
+            "Eden\\R606Eval\\Migrations\\": "lib/Migrations/"
         }
     },
     "authors": [
@@ -21,6 +19,7 @@
         "doctrine/orm": "^3.6",
         "doctrine/dbal": "^4",
         "symfony/cache": "^7",
-        "symfony/var-exporter": "^7.0"
+        "symfony/var-exporter": "^7.0",
+        "doctrine/migrations": "^3.9"
     }
 }
