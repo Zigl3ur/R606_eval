@@ -5,10 +5,6 @@ namespace Eden\R606Eval\Tests;
 use Eden\R606Eval\Entity\DbTable;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Unit tests for the DbTable entity.
- * No database connection required.
- */
 class DbTableTest extends TestCase
 {
     public function testNewEntityHasNullId(): void
